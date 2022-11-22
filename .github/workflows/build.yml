@@ -77,6 +77,6 @@ jobs:
     - name: Release File
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "./*"
+        artifacts: "./release/gdrive-linux-386"
         token: ${{ secrets.RELEASE_TOKEN }}
         tag: v0.0.${{ github.run_number }}

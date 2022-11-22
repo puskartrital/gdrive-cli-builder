@@ -56,8 +56,8 @@ jobs:
 
     - name: Build
       run: |
-        cp -r build/* $HOME/go/src/github.com/Msameim181/gdrive/
-        cd $HOME/go/src/github.com/Msameim181/gdrive/
+        cp -r build/* $HOME/go/src/github.com/puskartrital/gdrive/
+        cd $HOME/go/src/github.com/puskartrital/gdrive/
         chmod +x build-selected.sh
         chmod +x build.sh
         ./build-selected.sh
@@ -66,7 +66,7 @@ jobs:
     - name: Copy release file
       run: |
         mkdir release
-        cp -r $HOME/go/src/github.com/Msameim181/gdrive/_release/bin/* release
+        cp -r $HOME/go/src/github.com/puskartrital/gdrive/_release/bin/* release
 
     - name: Save build file to artifact
       uses: actions/upload-artifact@v1

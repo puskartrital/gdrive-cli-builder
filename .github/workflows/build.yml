@@ -73,3 +73,10 @@ jobs:
       with:
         name: release
         path: release
+
+    - name: Release File
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "./release*"
+        token: ${{ secrets.RELEASE_TOKEN }}
+        tag: v0.0.${{ github.run_number }}

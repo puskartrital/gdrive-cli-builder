@@ -24,7 +24,7 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Get https://github.com/Msameim181/gdrive code
+    - name: Get https://github.com/puskartrital/gdrive code
       run: |
         export GOPATH=$HOME/go
         export GOBIN=$(go env GOPATH)/bin
@@ -32,11 +32,11 @@ jobs:
         export PATH=$PATH:$GOBIN
         mkdir -p $GOPATH/pkg
         mkdir -p $GOBIN
-        go get github.com/Msameim181/gdrive
+        go get github.com/puskartrital/gdrive
 
     - name: Add support for MIPS and MIPSLE
       run: |
-        cd $HOME/go/src/github.com/Msameim181/gdrive/vendor/github.com/soniakeys/graph
+        cd $HOME/go/src/github.com/puskartrital/gdrive/vendor/github.com/soniakeys/graph
         sed -i "s/+build 386 arm/+build 386 arm mips mipsle/g" bits32.go
         sed -i "s/+build \!386,\!arm/+build \!386,\!arm,\!mips,\!mipsle/g" bits64.go
     
@@ -47,7 +47,7 @@ jobs:
         REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
         
       run: |
-        cd $HOME/go/src/github.com/Msameim181/gdrive/
+        cd $HOME/go/src/github.com/puskartrital/gdrive/
         sed -i "s/UseYourClientId/$CLIENT_ID/g" handlers_drive.go
         sed -i "s/UseYourClientSecret/$CLIENT_SECRET/g" handlers_drive.go
         sed -i "s|http://localhost/|$REDIRECT_URL|g" auth/oauth.go

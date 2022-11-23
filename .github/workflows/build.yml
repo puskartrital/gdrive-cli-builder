@@ -67,12 +67,13 @@ jobs:
       run: |
         mkdir release
         cp -r $HOME/go/src/github.com/puskartrital/gdrive/_release/bin/* release
+        mv release/gdrive-linux-386 release/gdrive
 
-    - name: Save build file to artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: release
-        path: release
+    # - name: Save build file to artifact
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: release
+    #     path: release
 
     - name: Release File
       uses: ncipollo/release-action@v1

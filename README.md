@@ -204,3 +204,10 @@ On unix systems run `chmod +x {filename}` after download to make the binary exec
 
 ### Thanks to
 [prasmussen](https://github.com/prasmussen) and [all](https://github.com/gdrive-org/gdrive/graphs/contributors) GDrive CLI contributor for creating a great tools
+
+
+
+#### NOTE: Use Google Auth Playground
+
+* Use the google auth playground to set the CLIENT_ID, CLIENT_SECRET and finally select the google drive v3 after that select auth scope from dropdown then authorize api then exchange the token for access_token and refresh_token but make sure to tick automatically refresh token as well. Copy the access_token and refresh_token copy it to .gdrive/token_v2.json that's it. you're 
+good to go.
